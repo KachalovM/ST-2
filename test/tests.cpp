@@ -1,8 +1,11 @@
 // Copyright 2024 Kachalov Mikhail
 #include <gtest/gtest.h>
 #include <cstdint>
+#include <cmath>
 #include "circle.h"
 #include "tasks.h"
+
+const double PI = 3.14159265358979323846;
 
 TEST(CircleTest, SetRadius) {
     Circle circle(10);
