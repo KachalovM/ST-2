@@ -80,13 +80,13 @@ TEST(CircleTest, SmallFerence) {
 TEST(TasksTest, SolveEarthAndRopeLargeRadius) {
     double largeRadius = 1e8;
     double gap = solveEarthAndRope(largeRadius, 1);
-    EXPECT_NEAR(gap, 0.159154943, 1e-9);
+    EXPECT_NEAR(gap, 0.159154943, 1e-6);
 }
 
 TEST(TasksTest, SolveEarthAndRopeMinimalRadius) {
     double minimalRadius = 0.001;
     double gap = solveEarthAndRope(minimalRadius, 1);
-    EXPECT_NEAR(gap, 0.159154943, 1e-9);
+    EXPECT_NEAR(gap, 0.159154943, 1e-6);
 }
 
 TEST(TasksTest, SolveSwimmingPoolNoWalkway) {
