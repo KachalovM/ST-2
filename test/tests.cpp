@@ -76,3 +76,73 @@ TEST(CircleTest, SmallFerence) {
     EXPECT_NEAR(circle.getRadius(), 1 / (2 * PI), 1e-9);
     EXPECT_NEAR(circle.getArea(), PI * std::pow(1 / (2 * PI), 2), 1e-9);
 }
+
+TEST(TasksTest, SolveEarthAndRopeLargeRadius) {
+    double largeRadius = 1e8;
+    double gap = solveEarthAndRope(largeRadius);
+    EXPECT_NEAR(gap, 0.159154943, 1e-9);
+}
+
+TEST(TasksTest, SolveEarthAndRopeMinimalRadius) {
+    double minimalRadius = 0.001;
+    double gap = solveEarthAndRope(minimalRadius);
+    EXPECT_NEAR(gap, 0.159154943, 1e-9);
+}
+
+TEST(TasksTest, SolveSwimmingPoolNoWalkway) {
+    double poolRadius = 3;
+    double walkwayWidth = 0;
+    double totalCost = solveSwimmingPool(poolRadius, walkwayWidth);
+    EXPECT_NEAR(totalCost, 37699.11184, 1e-2);
+}
+
+TEST(TasksTest, SolveSwimmingPoolNegativeRadius) {
+    double poolRadius = -3;
+    double walkwayWidth = 1;
+    double totalCost = solveSwimmingPool(poolRadius, walkwayWidth);
+    EXPECT_TRUE(std::isnan(totalCost));
+}
+
+TEST(TasksTest, SolveSwimmingPoolFractionalSizes) {
+    double poolRadius = 2.5;
+    double walkwayWidth = 0.5;
+    double totalCost = solveSwimmingPool(poolRadius, walkwayWidth);
+    EXPECT_NEAR(totalCost, 60538.64966, 1e-2);
+}
+
+TEST(TasksTest, SolveSwimmingPoolNarrowWalkway) {
+    double poolRadius = 3;
+    double walkwayWidth = 0.001;
+    double totalCost = solveSwimmingPool(poolRadius, walkwayWidth);
+    EXPECT_NEAR(totalCost, 37705.11184, 1e-2);
+}
+
+TEST(TasksTest, SolveSwimmingPoolLargePoolAndWalkway) {
+    double poolRadius = 1000;
+    double walkwayWidth = 500;
+    double totalCost = solveSwimmingPool(poolRadius, walkwayWidth);
+    EXPECT_NEAR(totalCost, 1884955592155.739, 1e-2);
+}
+
+TEST(TasksTest, SolveSwimmingPoolZeroRadius) {
+    double poolRadius = 0;
+    double walkwayWidth = 1;
+    double totalCost = solveSwimmingPool(poolRadius, walkwayWidth);
+    EXPECT_NEAR(totalCost, 75398.22369, 1e-2);
+}
+
+TEST(TasksTest, SolveSwimmingPoolNegativeWalkwayWidth) {
+    double poolRadius = 3;
+    double walkwayWidth = -1;
+    double totalCost = solveSwimmingPool(poolRadius, walkwayWidth);
+    EXPECT_TRUE(std::isnan(totalCost));
+}
+
+TEST(TasksTest, SolveSwimmingPoolWalkwayArea) {
+    double poolRadius = 3.2;
+    double walkwayWidth = 1.5;
+    Circle pool(poolRadius);
+    Circle poolWithWalkway(poolRadius + walkwayWidth);
+    double walkwayArea = poolWithWalkway.getArea() - pool.getArea();
+    EXPECT_NEAR(walkwayArea, 53.15646, 1e-2);
+}
