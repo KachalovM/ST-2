@@ -107,28 +107,28 @@ TEST(TasksTest, SolveSwimmingPoolFractionalSizes) {
     double poolRadius = 2.5;
     double walkwayWidth = 0.5;
     double totalCost = solveSwimmingPool(poolRadius, walkwayWidth);
-    EXPECT_NEAR(totalCost, 60538.64966, 1e-2);
+    EXPECT_NEAR(totalCost, 60538.64966, 1e-6);
 }
 
 TEST(TasksTest, SolveSwimmingPoolNarrowWalkway) {
     double poolRadius = 3;
     double walkwayWidth = 0.001;
     double totalCost = solveSwimmingPool(poolRadius, walkwayWidth);
-    EXPECT_NEAR(totalCost, 37705.11184, 1e-2);
+    EXPECT_NEAR(totalCost, 37705.11184, 1e-6);
 }
 
 TEST(TasksTest, SolveSwimmingPoolLargePoolAndWalkway) {
     double poolRadius = 1000;
     double walkwayWidth = 500;
     double totalCost = solveSwimmingPool(poolRadius, walkwayWidth);
-    EXPECT_NEAR(totalCost, 1884955592155.739, 1e-2);
+    EXPECT_NEAR(totalCost, 1884955592155.739, 1e-6);
 }
 
 TEST(TasksTest, SolveSwimmingPoolZeroRadius) {
     double poolRadius = 0;
     double walkwayWidth = 1;
     double totalCost = solveSwimmingPool(poolRadius, walkwayWidth);
-    EXPECT_NEAR(totalCost, 75398.22369, 1e-2);
+    EXPECT_NEAR(totalCost, 75398.22369, 1e-6);
 }
 
 TEST(TasksTest, SolveSwimmingPoolNegativeWalkwayWidth) {
@@ -144,5 +144,5 @@ TEST(TasksTest, SolveSwimmingPoolWalkwayArea) {
     Circle pool(poolRadius);
     Circle poolWithWalkway(poolRadius + walkwayWidth);
     double walkwayArea = poolWithWalkway.getArea() - pool.getArea();
-    EXPECT_NEAR(walkwayArea, 53.15646, 1e-2);
+    EXPECT_NEAR(walkwayArea, 53.15646, 1e-6);
 }

@@ -2,7 +2,6 @@
 #include "tasks.h"
 #include "circle.h"
 #include <limits>
-#include <cmath>
 
 double solveEarthAndRope(double earthRadius, double addLength) {
     Circle earth(earthRadius);
