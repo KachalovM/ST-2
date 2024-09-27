@@ -1,7 +1,7 @@
 // Copyright 2024 Kachalov Mikhail
-#include <cstdint>
 #include "circle.h"
 #include <cmath>
+#include <cstdint>
 
 const double PI = 3.14159265358979323846;
 

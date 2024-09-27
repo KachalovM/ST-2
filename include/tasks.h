@@ -1,6 +1,6 @@
 // Copyright 2024 Kachalov Mikhail
-#ifndef TASKS_H
-#define TASKS_H
+#ifndef INCLUDE_TASKS_H_
+#define INCLUDE_TASKS_H_
 
 double solveEarthAndRope(double earthRadius);
 double solveSwimmingPool(double poolRadius, double walkwayWidth);
