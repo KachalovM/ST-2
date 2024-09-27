@@ -32,13 +32,13 @@ TEST(CircleTest, SetArea) {
 
 TEST(TasksTest, SolveEarthAndRope) {
     double earthRadius = 6378100;
-    double gap = solveEarthAndRope(earthRadius);
+    double gap = solveEarthAndRope(earthRadius, 1);
     EXPECT_NEAR(gap, 0.159154943, 1e-9);
 }
 
 TEST(TasksTest, SolveEarthAndRopeSmallRadius) {
     double smallRadius = 1;
-    double gap = solveEarthAndRope(smallRadius);
+    double gap = solveEarthAndRope(smallRadius, 1);
     EXPECT_NEAR(gap, 0.159154943, 1e-9);
 }
 
@@ -79,13 +79,13 @@ TEST(CircleTest, SmallFerence) {
 
 TEST(TasksTest, SolveEarthAndRopeLargeRadius) {
     double largeRadius = 1e8;
-    double gap = solveEarthAndRope(largeRadius);
+    double gap = solveEarthAndRope(largeRadius, 1);
     EXPECT_NEAR(gap, 0.159154943, 1e-9);
 }
 
 TEST(TasksTest, SolveEarthAndRopeMinimalRadius) {
     double minimalRadius = 0.001;
-    double gap = solveEarthAndRope(minimalRadius);
+    double gap = solveEarthAndRope(minimalRadius, 1);
     EXPECT_NEAR(gap, 0.159154943, 1e-9);
 }
 

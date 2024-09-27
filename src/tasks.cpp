@@ -1,20 +1,26 @@
 // Copyright 2024 Kachalov Mikhail
 #include "circle.h"
 #include "tasks.h"
+#include <cmath>
+#include <limits>
 
-double solveEarthAndRope(double earthRadius) {
+double solveEarthAndRope(double earthRadius, double addLength) {
     Circle earth(earthRadius);
-    double newFerence = earth.getFerence() + 1;
+    double newFerence = earth.getFerence() + addLength;
 
     Circle ropeCircle(earthRadius);
     ropeCircle.setFerence(newFerence);
 
     double gap = ropeCircle.getRadius() - earth.getRadius();
 
-    return gap;
+    return gap > 0 ? gap : 0;
 }
 
 double solveSwimmingPool(double poolRadius, double walkwayWidth) {
+    if (poolRadius < 0 || walkwayWidth < 0) {
+        return std::numeric_limits<double>::quiet_NaN();
+    }
+
     Circle pool(poolRadius);
     Circle poolWithWalkway(poolRadius + walkwayWidth);
 
