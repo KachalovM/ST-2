@@ -1,7 +1,7 @@
 // Copyright 2024 Kachalov Mikhail
 #include "tasks.h"
-#include "circle.h"
 #include <limits>
+#include "circle.h"
 
 double solveEarthAndRope(double earthRadius, double addLength) {
     Circle earth(earthRadius);
