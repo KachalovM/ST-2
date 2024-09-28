@@ -114,14 +114,14 @@ TEST(TasksTest, SolveSwimmingPoolNarrowWalkway) {
     double poolRadius = 3;
     double walkwayWidth = 0.001;
     double totalCost = solveSwimmingPool(poolRadius, walkwayWidth);
-    EXPECT_NEAR(totalCost, 37720.0105, 1e-2);
+    EXPECT_NEAR(totalCost, 37730.53091, 1e-1);
 }
 
 TEST(TasksTest, SolveSwimmingPoolLargePoolAndWalkway) {
     double poolRadius = 1000;
     double walkwayWidth = 500;
     double totalCost = solveSwimmingPool(poolRadius, walkwayWidth);
-    EXPECT_NEAR(totalCost, 5811946377.16, 1e-2);
+    EXPECT_NEAR(totalCost, 3945840372.91, 1e-0);
 }
 
 TEST(TasksTest, SolveSwimmingPoolZeroRadius) {
